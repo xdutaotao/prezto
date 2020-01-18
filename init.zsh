@@ -191,3 +191,9 @@ unset zfunction{s,}
 zstyle -a ':prezto:load' pmodule 'pmodules'
 pmodload "$pmodules[@]"
 unset pmodules
+
+# Load all of your custom configurations from custom/
+for config_file ($ZPREZTODIR/lib/*.zsh); do
+  source $config_file
+done
+unset config_file
